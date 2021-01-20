@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import Navbar from './navbar';
-import Filter from './filter';
-import Card from './card'; 
+import React, {useState, useEffect} from 'react';
 import './styles/home.css';
+import imgdata from '../dataposters.json';
+
+
 
 const Home = () =>{
 
@@ -20,33 +20,50 @@ const Home = () =>{
        setGhibli(dataMovies)
     };
 
+    const posters = imgdata;
+    console.log(posters)
     return (
-        <div>
-            <Navbar/>
-            <Filter/>
-            <div className="cardContainer">
-            {ghibli.map((data, index)=>{
+       <main className="Container">
+           <section className="CardsContainer">
+           {ghibli.map((data, index)=>{
                    return (
                        <div key={index} className="card">
-                           <div className="img">
-                               <img src="" alt=""/>
+                           <div className="containerimg">
+                                {posters.map((posters, index) => {
+                                    if (posters.title === data.title)
+                                     return(
+                                           <img key={index}
+                                           className="cardimg" 
+                                           src= {posters.posterURL} 
+                                           alt={data.title} />
+                                        )     
+                                   
+                                })}
                            </div>
-                           <div className="cardText">
-                           <p>{data.title}</p>
-                           <p>{data.director}</p>
-                           <p>{data.description}</p>
-                           <p> {data.release_date}</p>
-                           </div>
-                           
+                              
+                            <div className="cardText">
+                                <div className="title">
+                                    <h5>{data.title}</h5>
+                                </div>
+                                <div className="info">
+                                <p>{data.release_date}</p>
+                                <p>{data.rt_score}</p>
+                                </div>
+                                <div>
+                                <button className="btnCards">Conoce más!</button>
+                            </div>
+                            </div>
+                            
                        </div>
+                 
                    )
                })}
-            </div>
-               
-                
-            <Card/>
-        </div>
+           </section>
+            
+       </main>
+    
     )
+
 };
 
 export default Home; 
