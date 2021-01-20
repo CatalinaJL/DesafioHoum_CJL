@@ -8,7 +8,7 @@
     justify-content: center;
 }
 
-.card{
+.cardMovie{
     width: 25vw;
     height: 40vh;
     display: flex;
@@ -18,7 +18,7 @@
 }
 
 .containerimg{
-    margin: 2%;
+    margin: 2px;
 }
 
 .cardimg{

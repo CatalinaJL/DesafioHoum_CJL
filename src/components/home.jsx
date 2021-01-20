@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './styles/home.css';
 import imgdata from '../dataposters.json';
+import FilterDrop from './filter';
+
 
 
 
@@ -20,14 +22,28 @@ const Home = () =>{
        setGhibli(dataMovies)
     };
 
+    // const Selectfilter1= () =>{
+    //     console.log('estoy escuchando');
+    //     // console.log(e.target.value);
+    // }
+
+    // const Selectfilter2= () =>{
+    //     console.log('estoy escuchando');
+    //     // console.log(target.value);
+    // }
+
     const posters = imgdata;
     console.log(posters)
     return (
        <main className="Container">
+           {/* <FilterDrop
+           filter1={Selectfilter1()}
+           filter2={Selectfilter2()}
+           /> */}
            <section className="CardsContainer">
            {ghibli.map((data, index)=>{
                    return (
-                       <div key={index} className="card">
+                       <div key={index} className="cardMovie">
                            <div className="containerimg">
                                 {posters.map((posters, index) => {
                                     if (posters.title === data.title)
