@@ -1,46 +1,52 @@
-import React, {useState, useEffect} from 'react';
+import React, {useContext} from 'react';
 import './styles/home.css';
-import imgdata from '../dataposters.json';
-import FilterDrop from './filter';
+import ContextUser from '../App.js';
+
+// import imgdata from '../dataposters.json';
+// import FilterDrop from './filter';
 
 
 
 
 const Home = () =>{
+    const { userGhibli, urlPoster  } = useContext(ContextUser);
+    const [data] = userGhibli;
+    const [posterURL] = urlPoster; 
+    console.log(data);
+    console.log(posterURL);
+    // const[ghibli, setGhibli] = useState([]);
 
-    const[ghibli, setGhibli] = useState([]);
+    // useEffect(()=>{
+    //     console.log('hola!')
+    //     getMovieData();
+    // }, []);
 
-    useEffect(()=>{
-        console.log('hola!')
-        getMovieData();
-    }, []);
+    // const getMovieData = async () =>{
+    //     const data = await fetch ('https://ghibliapi.herokuapp.com/films');
+    //     const dataMovies = await data.json();
+    //     console.log(dataMovies)
+    //    setGhibli(dataMovies)
+    // };
 
-    const getMovieData = async () =>{
-        const data = await fetch ('https://ghibliapi.herokuapp.com/films');
-        const dataMovies = await data.json();
-        console.log(dataMovies)
-       setGhibli(dataMovies)
-    };
+    // // const Selectfilter1= () =>{
+    // //     console.log('estoy escuchando');
+    // //     // console.log(e.target.value);
+    // // }
 
-    // const Selectfilter1= () =>{
-    //     console.log('estoy escuchando');
-    //     // console.log(e.target.value);
-    // }
+    // // const Selectfilter2= () =>{
+    // //     console.log('estoy escuchando');
+    // //     // console.log(target.value);
+    // // }
 
-    // const Selectfilter2= () =>{
-    //     console.log('estoy escuchando');
-    //     // console.log(target.value);
-    // }
-
-    const posters = imgdata;
-    console.log(posters)
+    // const posters = imgdata;
+    // console.log(posters)
     return (
        <main className="Container">
            {/* <FilterDrop
            filter1={Selectfilter1()}
            filter2={Selectfilter2()}
            /> */}
-           <section className="CardsContainer">
+           {/* <section className="CardsContainer">
            {ghibli.map((data, index)=>{
                    return (
                        <div key={index} className="cardMovie">
@@ -74,7 +80,7 @@ const Home = () =>{
                  
                    )
                })}
-           </section>
+           </section> */}
             
        </main>
     
