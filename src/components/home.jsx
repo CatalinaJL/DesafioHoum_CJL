@@ -1,17 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import './styles/home.css';
 import imgdata from '../dataposters.json';
-import Navbar from './navbar';
-import {Form, FormControl} from 'react-bootstrap'
-// import FilterDrop from './filter';
+import GhibliIcon from '../Assets/anime.svg';
 
 
 const Home = () =>{
 
     const[ghibli, setGhibli] = useState([]);
     const [search,setSearch] = useState([]);
-    // const [filterData, setFilterData] = ([]);
-
+    
     useEffect(()=>{
         getMovieData();
     }, []);
@@ -31,10 +28,13 @@ const Home = () =>{
     return (
        <main className="Container">
            <header>
-            <Navbar/>
-            <Form inline>
-                <FormControl type="text" size="sm" placeholder="Busca por nombre" onChange={e=> setSearch(e.target.value)} />
-            </Form>
+                <img className="navbarIcon" src={GhibliIcon} alt="Icono Ghibli"/>
+                <div className="titleHeader">
+                    <h1>Películas Studio Ghibli</h1>
+               </div>
+               <div className="inputSearch">
+                   <input type="text" placeholder="Busca por película" onChange={e=>setSearch(e.target.value)}/>
+               </div>
            </header>
            <section className="CardsContainer"> 
            {filterdMovies.map((data, index)=>{

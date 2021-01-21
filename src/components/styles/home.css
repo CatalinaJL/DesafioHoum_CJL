@@ -2,15 +2,51 @@
     width: 100%;
     display:flex;
     flex-direction: column;
+    margin: 0;
+    padding:0;
+
 }
 
 header{
-    width: 100%;
+    width: 95%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    justify-content: space-around;
+    align-content: center;
+    margin: 15px;
+    padding: 15px;
 }
+
+.titleHeader h1{
+    font-family: 'Merriweather', serif !important;
+    font-size: 5vh !important;
+    font-weight: 700;
+    margin-top: 25px;
+    color: 	#008080;
+}
+
+.navbarIcon{
+    width: 6vw;
+    margin: 6px;
+}
+
+.inputSearch input{
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    margin-top: 25px;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+.inputSearch input:focus{
+    border-color: #008080;
+    box-shadow: 0 0 8px #008080;
+}
+
 .CardsContainer{
     width: 90%;
     display: flex;
@@ -67,6 +103,14 @@ header{
 }
 
 @media only screen and (max-width: 600px) {
+
+    .navbarIcon{
+        width: 8vw;
+    }
+    /* .titleHeader h1{
+        font-size: ;
+    } */
+
     .cardMovie{
         width: 45vw;
         height: 62vh;
@@ -84,12 +128,14 @@ header{
 } 
     
 @media only screen and (min-width: 601px) and (max-width: 959px) {
-
+ 
     header{
         width: 90%;
         margin: 5px;
     }
-    
+    .navbarIcon{
+        width: 8vw;
+    }
     .cardMovie{
         width: 40vw;
         height: 57vh;
