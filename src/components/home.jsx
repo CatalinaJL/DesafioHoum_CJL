@@ -21,23 +21,20 @@ const Home = () =>{
     const [search,setSearch] = useState([]);
 
     useEffect(()=>{
-        console.log('hola!')
         getMovieData();
     }, []);
 
     const getMovieData = async () =>{
         const data = await fetch ('https://ghibliapi.herokuapp.com/films');
         const dataMovies = await data.json();
-        console.log(dataMovies)
        setGhibli(dataMovies)
     };
     const posters = imgdata;
-    console.log(posters)
+
     
-    const filterdMovies = ghibli.filter(data =>{
-        return data.title.toLowerCase().includes(search.toLowerCase());
-        
-    }, [search, ghibli]);
+    const filterdMovies = ghibli.filter(data=>{
+       return data.title.toString().toLowerCase().includes(search.toString().toLowerCase())
+    });
     
     return (
        <main className="Container">
