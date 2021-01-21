@@ -24,6 +24,19 @@ const Home = () =>{
     const filterdMovies = ghibli.filter(data=>{
        return data.title.toString().toLowerCase().includes(search.toString().toLowerCase())
     });
+
+    const director = ghibli.filter(data=>{
+        return data.director;
+    });
+
+
+    // const directorSelected =(e)=>{
+    //     const choice= e.target.value;
+    //     if(choice === director){
+    //         setSearch(directorSelected)
+    //     }
+    // };
+    // console.log(search);
     
     return (
        <main className="Container">
@@ -36,6 +49,19 @@ const Home = () =>{
                    <input type="text" placeholder="Busca por película" onChange={e=>setSearch(e.target.value)}/>
                </div>
            </header>
+           {/* <section className="filterSelect">
+            <select onChange={directorSelected}> 
+                <option value="0">Directores</option>
+                <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+                <option value="Isao Takahata">Isao Takahata</option>
+                <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+                <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+                <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+                <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+            </select>
+
+           </section> */}
+          
            <section className="CardsContainer"> 
            {filterdMovies.map((data, index)=>{
                    return (
