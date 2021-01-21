@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/DesafioHoum_CJL/static/css/main.ba01017a.chunk.css",
+    "main.js": "/DesafioHoum_CJL/static/js/main.1e522638.chunk.js",
+    "main.js.map": "/DesafioHoum_CJL/static/js/main.1e522638.chunk.js.map",
+    "runtime-main.js": "/DesafioHoum_CJL/static/js/runtime-main.06a7c180.js",
+    "runtime-main.js.map": "/DesafioHoum_CJL/static/js/runtime-main.06a7c180.js.map",
+    "static/js/2.b6b8a07b.chunk.js": "/DesafioHoum_CJL/static/js/2.b6b8a07b.chunk.js",
+    "static/js/2.b6b8a07b.chunk.js.map": "/DesafioHoum_CJL/static/js/2.b6b8a07b.chunk.js.map",
+    "index.html": "/DesafioHoum_CJL/index.html",
+    "static/css/main.ba01017a.chunk.css.map": "/DesafioHoum_CJL/static/css/main.ba01017a.chunk.css.map",
+    "static/js/2.b6b8a07b.chunk.js.LICENSE.txt": "/DesafioHoum_CJL/static/js/2.b6b8a07b.chunk.js.LICENSE.txt",
+    "static/media/anime.9e376d6d.svg": "/DesafioHoum_CJL/static/media/anime.9e376d6d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.06a7c180.js",
+    "static/js/2.b6b8a07b.chunk.js",
+    "static/css/main.ba01017a.chunk.css",
+    "static/js/main.1e522638.chunk.js"
+  ]
+}
