@@ -6,17 +6,18 @@ import GhibliIcon from '../Assets/anime.svg';
 
 const NavbarApp = () =>{
     return (
-        <Navbar collapseOnSelect expand="lg" bg="ligth" variant="light">
+        <Navbar size="sm" collapseOnSelect expand="lg" bg="ligth" variant="light">
             <Navbar.Brand href="#home"><img className="navbarIcon" src={GhibliIcon} alt="Icono Ghibli"/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                <Nav.Link href="#peliculas">Películas</Nav.Link>
+                 </Nav>
                  <Nav className="mr-auto">
-                 <Nav.Link href="#peliculas">Películas</Nav.Link>
-    </Nav>
-   
-    
-  </Navbar.Collapse>
-</Navbar>
+                <Nav.Link href="#directores">Directores</Nav.Link>
+                 </Nav>
+                </Navbar.Collapse>
+        </Navbar>
     )
 };
 

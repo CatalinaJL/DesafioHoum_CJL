@@ -1,4 +1,16 @@
+.Container{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+}
 
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
 .CardsContainer{
     width: 90%;
     display: flex;
@@ -35,7 +47,7 @@
 
 .title{
     font-family: 'Merriweather', serif;
-    font-size: 2.5vh;
+    font-size: 2.5vh !important;
     margin: 0;
 }
 
@@ -53,4 +65,52 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 1.5vh;
 }
+
+@media only screen and (max-width: 600px) {
+    .cardMovie{
+        width: 45vw;
+        height: 62vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardimg{
+        width: 35vw;
+    }
+
+    .cardText{
+        width: 35vw;
+    }
+} 
     
+@media only screen and (min-width: 601px) and (max-width: 959px) {
+
+    header{
+        width: 90%;
+        margin: 5px;
+    }
+    
+    .cardMovie{
+        width: 40vw;
+        height: 57vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardimg{
+        width: 30vw;
+    }
+
+    .cardText{
+        width: 34vw;
+    }
+
+    .cardText .title{
+        font-size: 2vh;
+    }
+
+    .cardText .info{
+        font-size: 1.5vh;
+    }
+
+} 

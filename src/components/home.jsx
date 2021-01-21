@@ -2,23 +2,15 @@ import React, {useState, useEffect} from 'react';
 import './styles/home.css';
 import imgdata from '../dataposters.json';
 import Navbar from './navbar';
-import {Form, FormControl, Button } from 'react-bootstrap'
+import {Form, FormControl} from 'react-bootstrap'
+// import FilterDrop from './filter';
 
-
-// const Selectfilter1= () =>{
-//     // console.log('estoy escuchando1');
-//     console.log(eventKey);
-// }
-
-// const Selectfilter2= () =>{
-//     console.log('estoy escuchando2');
-//     // console.log(target.value);
-// }
 
 const Home = () =>{
 
     const[ghibli, setGhibli] = useState([]);
     const [search,setSearch] = useState([]);
+    // const [filterData, setFilterData] = ([]);
 
     useEffect(()=>{
         getMovieData();
@@ -30,7 +22,7 @@ const Home = () =>{
        setGhibli(dataMovies)
     };
     const posters = imgdata;
-
+    
     
     const filterdMovies = ghibli.filter(data=>{
        return data.title.toString().toLowerCase().includes(search.toString().toLowerCase())
@@ -38,13 +30,13 @@ const Home = () =>{
     
     return (
        <main className="Container">
-         {/* <Navbar/> */}
-         <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={e=> setSearch(e.target.value)} />
-            <Button variant="outline-info">Search</Button>
-        </Form>
-           <section className="CardsContainer">
-               {search}
+           <header>
+            <Navbar/>
+            <Form inline>
+                <FormControl type="text" size="sm" placeholder="Busca por nombre" onChange={e=> setSearch(e.target.value)} />
+            </Form>
+           </header>
+           <section className="CardsContainer"> 
            {filterdMovies.map((data, index)=>{
                    return (
                        <div key={index} className="cardMovie">
@@ -66,12 +58,11 @@ const Home = () =>{
                                     <h5>{data.title}</h5>
                                 </div>
                                 <div className="info">
-                                <p>{data.release_date}</p>
-                                <p>{data.rt_score}</p>
+                                    <p>Año:</p>
+                                    <p> {data.release_date}</p>
+                                    <p>Director:</p> 
+                                    <p>{data.director}</p>
                                 </div>
-                                <div>
-                                <button className="btnCards">Conoce más!</button>
-                            </div>
                             </div>
                             
                        </div>

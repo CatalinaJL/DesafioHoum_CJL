@@ -1,3 +1,15 @@
 .navbarIcon{
     width: 4vw;
 }
+
+@media only screen and (max-width: 600px) {
+    .navbarIcon{
+        width: 14vw;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .navbarIcon{
+        width: 8vw;
+    }
+}
