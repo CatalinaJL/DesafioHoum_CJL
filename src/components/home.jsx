@@ -1,14 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import './styles/home.css';
 import imgdata from '../dataposters.json';
-import FilterDrop from './filter';
+import Navbar from './navbar';
+import {Form, FormControl, Button } from 'react-bootstrap'
 
 
+// const Selectfilter1= () =>{
+//     // console.log('estoy escuchando1');
+//     console.log(eventKey);
+// }
 
+// const Selectfilter2= () =>{
+//     console.log('estoy escuchando2');
+//     // console.log(target.value);
+// }
 
 const Home = () =>{
 
     const[ghibli, setGhibli] = useState([]);
+    const [search,setSearch] = useState([]);
 
     useEffect(()=>{
         console.log('hola!')
@@ -21,27 +31,24 @@ const Home = () =>{
         console.log(dataMovies)
        setGhibli(dataMovies)
     };
-
-    // const Selectfilter1= () =>{
-    //     console.log('estoy escuchando');
-    //     // console.log(e.target.value);
-    // }
-
-    // const Selectfilter2= () =>{
-    //     console.log('estoy escuchando');
-    //     // console.log(target.value);
-    // }
-
     const posters = imgdata;
     console.log(posters)
+    
+    const filterdMovies = ghibli.filter(data =>{
+        return data.title.toLowerCase().includes(search.toLowerCase());
+        
+    }, [search, ghibli]);
+    
     return (
        <main className="Container">
-           {/* <FilterDrop
-           filter1={Selectfilter1()}
-           filter2={Selectfilter2()}
-           /> */}
+         {/* <Navbar/> */}
+         <Form inline>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2" onChange={e=> setSearch(e.target.value)} />
+            <Button variant="outline-info">Search</Button>
+        </Form>
            <section className="CardsContainer">
-           {ghibli.map((data, index)=>{
+               {search}
+           {filterdMovies.map((data, index)=>{
                    return (
                        <div key={index} className="cardMovie">
                            <div className="containerimg">

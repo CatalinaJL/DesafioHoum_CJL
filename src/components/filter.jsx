@@ -10,7 +10,7 @@ const FilterDrop =(props) =>{
 
             <Dropdown.Menu>
                 <Dropdown.Item href="#/action-1" onSelect={props.filter1} value="menormayor">Menor a Mayor Puntuación</Dropdown.Item>
-                <Dropdown.Item href="#/action-2"onSelect={props.filter2} value="director">Director</Dropdown.Item>
+                <Dropdown.Item href="#/action-2" onSeñect={props.filter2} value="director">Director</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     )
